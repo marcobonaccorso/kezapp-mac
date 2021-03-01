@@ -1,1 +1,3 @@
-export class Messaggio{}
+export class Messaggio{
+    
+}

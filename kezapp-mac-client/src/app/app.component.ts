@@ -10,6 +10,7 @@ export class AppComponent {
   messaggio = "";
   showTable: boolean = true;
   contatti: [] = [];
+  messaggiRicevuti: [] = [];
 
   constructor() { }
 

@@ -10,16 +10,16 @@
 <div>
 <table border=3px *ngIf="showTable" align = "center" *ngFor="let c of contatti" >
   <tr>
-    <th>Colonna 0</th>
-    <th>colonna 1 </th>
-    <th>colonna 3</th>
-    <th>colonna 4</th>
+    <th>ID </th>
+    <th>NOME  </th>
+    <th>SESSIONE</th>
+    <th>GESTISCI</th>
   </tr>
   <tr>
-    <td></td>&nbsp;
-    <td></td>&nbsp;
-    <td></td>&nbsp;
-    <td></td>&nbsp;
+    <td>{{c.id}}</td>&nbsp;
+    <td>{{c.nome}}</td>&nbsp;
+    <td>{{c.sessione}}</td>&nbsp;
+    <td>{{c.gestisci}}</td>&nbsp;
     <td><button (click)="invia()"> Invia</button></td>
   </tr>
 </table>
@@ -27,16 +27,17 @@
 <br>
 <table border=3px *ngIf="showTable"  align = "center" *ngFor="let m of messaggiRicevuti">
   <tr>
-    <th>Colonna 0</th>
-    <th>colonna 1 </th>
-    <th>colonna 3</th>
-    <th>colonna 4</th>
+    <th>ID </th>
+    <th>TESTO </th>
+    <th>MITTENTE </th>
+    <th>DESTINATARIO</th>
   </tr>
   <tr>
-    <td></td>&nbsp;
-    <td></td>&nbsp;
-    <td></td>&nbsp;
-    <td></td>&nbsp;
+
+    <td>{{m.id}}</td>&nbsp;
+    <td>{{m.testo}}</td>&nbsp;
+    <td>{{m.mittente}}</td>&nbsp;
+    <td>{{m.destinatario}}</td>&nbsp;
     <td><button (click)="aggiorna()"> Aggiorna</button></td>
   </tr>
 </table>
