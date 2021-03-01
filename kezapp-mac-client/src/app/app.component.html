@@ -1,0 +1,14 @@
+<input type="text" [(ngModel)]="nickname">
+<button (click)="registrazione()"> Registrazione </button>
+<br> <br>
+<input type="text" [(ngModel)]="messaggio">
+<button (click)="inviaTutti()">Invia a tutti</button>
+<br> <br>
+
+<table border=3px *ngIf="showTable">
+  <tr>
+    <th>Colonna 0</th>
+    <th>colonna 1 </th>
+    <th>colonna 3</th>
+  </tr>
+</table>
