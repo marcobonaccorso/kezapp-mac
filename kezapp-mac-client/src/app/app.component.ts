@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Chat } from './chat';
+import { Messaggio } from './messaggio';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +11,8 @@ export class AppComponent {
   nickname = "";
   messaggio = "";
   showTable: boolean = true;
-  contatti: [] = [];
-  messaggiRicevuti: [] = [];
+  messaggi: Messaggio[] = [];
+  contatti: Chat[] = [];
 
   constructor() { }
 

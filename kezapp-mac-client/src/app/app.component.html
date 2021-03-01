@@ -8,36 +8,34 @@
 <br> <br> <br> 
 </div>
 <div>
-<table border=3px *ngIf="showTable" align = "center" *ngFor="let c of contatti" >
+<table border=3px align = "center">
   <tr>
-    <th>ID </th>
-    <th>NOME  </th>
-    <th>SESSIONE</th>
-    <th>GESTISCI</th>
+    <th>Id</th>
+    <th>Nome</th>
+    <th>Sessione</th>
+    <th>Gestisci</th>
   </tr>
-  <tr>
+  <tr *ngFor="let c of contatti">
     <td>{{c.id}}</td>&nbsp;
-    <td>{{c.nome}}</td>&nbsp;
+    <td>{{c.nickname}}</td>&nbsp;
     <td>{{c.sessione}}</td>&nbsp;
-    <td>{{c.gestisci}}</td>&nbsp;
     <td><button (click)="invia()"> Invia</button></td>
   </tr>
 </table>
 <br>
 <br>
-<table border=3px *ngIf="showTable"  align = "center" *ngFor="let m of messaggiRicevuti">
+<table border=3px align = "center">
   <tr>
-    <th>ID </th>
-    <th>TESTO </th>
-    <th>MITTENTE </th>
-    <th>DESTINATARIO</th>
+    <th>Id</th>
+    <th>Testo</th>
+    <th>Mittente</th>
+    <th>Destinatario</th>
   </tr>
-  <tr>
-
+  <tr *ngFor="let m of messaggi">
     <td>{{m.id}}</td>&nbsp;
     <td>{{m.testo}}</td>&nbsp;
-    <td>{{m.mittente}}</td>&nbsp;
-    <td>{{m.destinatario}}</td>&nbsp;
+    <td>{{m.aliasMittente}}</td>&nbsp;
+    <td>{{m.aliasDestinatario}}</td>&nbsp;
     <td><button (click)="aggiorna()"> Aggiorna</button></td>
   </tr>
 </table>
