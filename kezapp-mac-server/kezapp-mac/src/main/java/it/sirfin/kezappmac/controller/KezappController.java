@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.sirfin.kezappmac.dto;
+package it.sirfin.kezappmac.controller;
 
 /**
  *
- * @author aleur
+ * @author 39392
  */
-public class kezappDto {
+public class KezappController {
     
 }
