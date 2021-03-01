@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  nickname: string = "";
-  messaggio: string = "";
+  nickname = "";
+  messaggio = "";
   showTable: boolean = true;
+  contatti: [] = [];
 
   constructor() { }
 
@@ -22,4 +23,5 @@ export class AppComponent {
   aggiorna() { }
 
   invia() { }
+
 }
