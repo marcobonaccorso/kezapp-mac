@@ -5,10 +5,13 @@
  */
 package it.sirfin.kezappmac.repository;
 
+import it.sirfin.kezappmac.model.Messaggio;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  *
- * @author aleur
+ * @author marco
  */
-public interface kezappRepository {
+public interface MessaggioRepository extends JpaRepository<Messaggio, Long>{
     
 }

@@ -4,16 +4,27 @@
  * and open the template in the editor.
  */
 package it.sirfin.kezappmac.model;
-
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 /**
  *
  * @author marco
  */
-public class Messaggio {
-    
+@Entity
+public class Messaggio implements Serializable {
+      @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long id;
+    @Column
     private String testo;
+    @Column
     private String aliasDestinatario;
+    @Column
     private String aliasMittente;
 
     public Messaggio() {
@@ -64,5 +75,5 @@ public class Messaggio {
     }
     
     
-    
+   
 }

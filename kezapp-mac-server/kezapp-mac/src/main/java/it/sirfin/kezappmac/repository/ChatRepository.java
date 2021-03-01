@@ -3,20 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.sirfin.kezappmac.service;
+package it.sirfin.kezappmac.repository;
+
+import it.sirfin.kezappmac.model.Chat;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author aleur
  */
-public interface KezappService {
-
-    void Registrazione();
-
-    void inviaTutti();
-
-    void aggiorna();
-
-    void invia();
-
+public interface ChatRepository extends JpaRepository<Chat,Long>{
+    
 }

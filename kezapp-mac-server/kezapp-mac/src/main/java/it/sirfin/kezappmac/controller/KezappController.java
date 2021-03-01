@@ -5,10 +5,20 @@
  */
 package it.sirfin.kezappmac.controller;
 
+import it.sirfin.kezappmac.service.KezappService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
+
 /**
  *
  * @author 39392
  */
+@CrossOrigin("*")
+@RestController
 public class KezappController {
+    @Autowired
+    KezappService kezappService;
+    
     
 }
