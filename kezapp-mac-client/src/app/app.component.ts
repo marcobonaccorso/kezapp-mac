@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   nickname: string = "";
   messaggio: string = "";
-  showTable:boolean=true;
+  showTable: boolean = true;
 
   constructor() { }
 
@@ -19,5 +19,7 @@ export class AppComponent {
   inviaTutti() {
 
   }
+  aggiorna() { }
 
+  invia() { }
 }
