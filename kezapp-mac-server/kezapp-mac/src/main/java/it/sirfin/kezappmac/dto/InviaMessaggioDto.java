@@ -10,17 +10,18 @@ package it.sirfin.kezappmac.dto;
  * @author 39392
  */
 public class InviaMessaggioDto {
-   private String messaggio;
-   private String sessione;
-   private String destinatario;
+
+    private String messaggio;
+    private int id;
+    private int idDestinatario;
 
     public InviaMessaggioDto() {
     }
 
-    public InviaMessaggioDto(String messaggio, String sessione, String destinatario) {
+    public InviaMessaggioDto(String messaggio, int id, int idDestinatario) {
         this.messaggio = messaggio;
-        this.sessione = sessione;
-        this.destinatario = destinatario;
+        this.id = id;
+        this.idDestinatario = idDestinatario;
     }
 
     public String getMessaggio() {
@@ -31,25 +32,25 @@ public class InviaMessaggioDto {
         this.messaggio = messaggio;
     }
 
-    public String getSessione() {
-        return sessione;
+    public int getId() {
+        return id;
     }
 
-    public void setSessione(String sessione) {
-        this.sessione = sessione;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getDestinatario() {
-        return destinatario;
+    public int getIdDestinatario() {
+        return idDestinatario;
     }
 
-    public void setDestinatario(String destinatario) {
-        this.destinatario = destinatario;
+    public void setIdDestinatario(int idDestinatario) {
+        this.idDestinatario = idDestinatario;
     }
 
     @Override
     public String toString() {
-        return "InviaMessaggioDto{" + "messaggio=" + messaggio + ", sessione=" + sessione + ", destinatario=" + destinatario + '}';
+        return "InviaMessaggioDto{" + "messaggio=" + messaggio + ", id=" + id + ", idDestinatario=" + idDestinatario + '}';
     }
-    
+
 }
