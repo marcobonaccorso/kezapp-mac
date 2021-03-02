@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Chat } from './chat';
-import { Contatto } from './contatto';
+import { InviaMessaggioDto } from './inviaMessaggioDto';
 import { Messaggio } from './messaggio';
+import { RegistrazioneDto } from './registrazioneDto';
+import { RichiediRegistrazioneDto } from './richiediRegistrazioneDto';
 
 @Component({
   selector: 'app-root',
@@ -10,26 +12,42 @@ import { Messaggio } from './messaggio';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  nickname = "";
-  messaggio = "";
-  showTable: boolean = true;
-  messaggi: Messaggio[] = [];
+  contatto = new Chat();
   contatti: Chat[] = [];
-  //contatto= new Contatto();
 
+  messaggio = new Messaggio();
+  messaggi: Messaggio[] = [];
+
+  messaggioDaInviare = "";
   constructor(private http: HttpClient) { }
 
   registrazione() {
-    //this.contatti.push(this.contatto);
-    //this.contatti=[];
+
+    let req = new RichiediRegistrazioneDto();
+    req.nickname = this.contatto.nickname;
+    let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/registrazione", req);
+    oss.subscribe(r => this.contatti = r.contatti);
+    this.contatto = new Chat();
 
   }
 
-  inviaTutti() {
-
+  inviaATutti() {
+    let req = new InviaMessaggioDto();
+    let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-tutti", req);
+    oss.subscribe(r => this.messaggi = r.messaggi);
   }
-  aggiorna() { }
 
-  invia() { }
+  inviaAUno(c: Messaggio) {
+    let req = new InviaMessaggioDto();
+    req.destinatario = c.aliasDestinatario;
+    let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-uno", req);
+    oss.subscribe();
+  }
+
+  aggiorna() {
+    let oss = this.http.get<RegistrazioneDto>("http://localhost:8080/aggiorna");
+    oss.subscribe(r => this.contatti = r.contatti);
+  }
+
 
 }

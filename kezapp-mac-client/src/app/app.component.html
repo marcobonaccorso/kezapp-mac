@@ -1,42 +1,45 @@
-<br>
-<div align = "center" >
-<input type="text" [(ngModel)]="nickname">
-<button (click)="registrazione()"> Registrazione </button>
-<br> <br> <br>
-<input type="text" [(ngModel)]="messaggio">
-<button (click)="inviaTutti()">Invia a tutti</button>
-<br> <br> <br> 
-</div>
 <div>
-<table border=3px align = "center">
+  <input type="text" [(ngModel)]="contatto.nickname">
+  <button (click)="registrazione()">Registrazione</button>
+</div>
+<br>
+<div>
+  <input type="text" [(ngModel)]="messaggioDaInviare">
+  <button (click)="inviaATutti()">Invia a tutti</button>
+</div>
+
+<br>
+Contatti
+<table>
   <tr>
     <th>Id</th>
-    <th>Nome</th>
+    <th>Nickname</th>
     <th>Sessione</th>
-    <th>Gestisci</th>
+    <th>Invia</th>
   </tr>
   <tr *ngFor="let c of contatti">
-    <td>{{c.id}}</td>&nbsp;
-    <td>{{c.nickname}}</td>&nbsp;
-    <td>{{c.sessione}}</td>&nbsp;
-    <td><button (click)="invia()"> Invia</button></td>
+    <td>{{c.id}}</td>
+    <td>{{c.nickname}}</td>
+    <td>{{c.sessione}}</td>
+    <td><button (click)="inviaAUno(c)">Invia A Uno</button></td>
   </tr>
 </table>
 <br>
 <br>
-<table border=3px align = "center">
+Messaggi Ricevuti
+<button (click)="aggiorna()">Aggiorna</button>
+<br>
+<table>
   <tr>
     <th>Id</th>
     <th>Testo</th>
-    <th>Mittente</th>
     <th>Destinatario</th>
+    <th>Mittente</th>
   </tr>
-  <tr *ngFor="let m of messaggi">
-    <td>{{m.id}}</td>&nbsp;
-    <td>{{m.testo}}</td>&nbsp;
-    <td>{{m.aliasMittente}}</td>&nbsp;
-    <td>{{m.aliasDestinatario}}</td>&nbsp;
-    <td><button (click)="aggiorna()"> Aggiorna</button></td>
+  <tr *ngFor="let a of messaggi">
+    <td>{{a.id}}</td>
+    <td>{{a.testo}}</td>
+    <td>{{a.aliasDestinatario}}</td>
+    <td>{{a.aliasMittente}}</td>
   </tr>
 </table>
-</div>
