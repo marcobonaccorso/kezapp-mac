@@ -17,15 +17,15 @@ public class RegistrazioneDto {
 
     private List<Chat> listaContatti;
     private List<Messaggio> listaMessaggi;
-    private String sessione;
-
-    public RegistrazioneDto(List<Chat> listaContatti, List<Messaggio> listaMessaggi, String sessione) {
-        this.listaContatti = listaContatti;
-        this.listaMessaggi = listaMessaggi;
-        this.sessione = sessione;
-    }
+    private int id;
 
     public RegistrazioneDto() {
+    }
+
+    public RegistrazioneDto(List<Chat> listaContatti, List<Messaggio> listaMessaggi, int id) {
+        this.listaContatti = listaContatti;
+        this.listaMessaggi = listaMessaggi;
+        this.id = id;
     }
 
     public List<Chat> getListaContatti() {
@@ -44,17 +44,18 @@ public class RegistrazioneDto {
         this.listaMessaggi = listaMessaggi;
     }
 
-    public String getSessione() {
-        return sessione;
+    public int getId() {
+        return id;
     }
 
-    public void setSessione(String sessione) {
-        this.sessione = sessione;
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
     public String toString() {
-        return "RegistrazioneDto{" + "listaContatti=" + listaContatti + ", listaMessaggi=" + listaMessaggi + ", sessione=" + sessione + '}';
+        return "RegistrazioneDto{" + "listaContatti=" + listaContatti + ", listaMessaggi=" + listaMessaggi + ", id=" + id + '}';
     }
 
+    
 }
