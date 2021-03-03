@@ -32,18 +32,20 @@ public class KezappServiceImpl implements KezappService {
         Chat c1 = new Chat(reqDto.getNickname());
         //salvarla su db e recuperarne il valore con l'id aggiornato
         c1 = kezappRepository.save(c1);
-
-        //convertire l id in stringa e metterlo nella sessione
-        String s2 = id.toString();
+        //convertire l'id in stringa e metterlo nella sessione
+        String s2 = c1.getId().toString();
+        c1.setSessione(s2);
         //aggiornare sul db la chat
-        c1.save();
+        c1 = kezappRepository.save(c1);
         //ritornare il dto richiesto dal controller
-        return registrazione(reqDto);
+        RegistrazioneDto reg = new RegistrazioneDto();
+        // impostare nel dto la lista contatti,messaggi e sessione
+        // ritornare questo dto cosi compilato
+        return reg;
     }
 
     @Override
     public RegistrazioneDto inviaTutti(InviaMessaggioDto reqDto) {
-
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

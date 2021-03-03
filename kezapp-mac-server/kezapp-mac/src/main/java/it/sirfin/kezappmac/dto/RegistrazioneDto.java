@@ -16,15 +16,9 @@ import java.util.List;
 public class RegistrazioneDto {
     private List<Chat> listaContatti;
     private List<Messaggio> listaMessaggi;
-    private int id;
+    private String sessione;
 
     public RegistrazioneDto() {
-    }
-
-    public RegistrazioneDto(List<Chat> listaContatti, List<Messaggio> listaMessaggi, int id) {
-        this.listaContatti = listaContatti;
-        this.listaMessaggi = listaMessaggi;
-        this.id = id;
     }
 
     public List<Chat> getListaContatti() {
@@ -43,18 +37,19 @@ public class RegistrazioneDto {
         this.listaMessaggi = listaMessaggi;
     }
 
-    public int getId() {
-        return id;
+    public String getSessione() {
+        return sessione;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSessione(String sessione) {
+        this.sessione = sessione;
     }
 
     @Override
     public String toString() {
-        return "RegistrazioneDto{" + "listaContatti=" + listaContatti + ", listaMessaggi=" + listaMessaggi + ", id=" + id + '}';
+        return "RegistrazioneDto{" + "listaContatti=" + listaContatti + ", listaMessaggi=" + listaMessaggi + ", sessione=" + sessione + '}';
     }
 
+    
     
 }
