@@ -40,6 +40,7 @@ public class KezappServiceImpl implements KezappService {
         //ritornare il dto richiesto dal controller
         RegistrazioneDto reg = new RegistrazioneDto();
         // impostare nel dto la lista contatti,messaggi e sessione
+        
         // ritornare questo dto cosi compilato
         return reg;
     }

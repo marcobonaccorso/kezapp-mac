@@ -10,28 +10,25 @@ package it.sirfin.kezappmac.dto;
  * @author 39392
  */
 public class RichiediMessaggiDto {
-    private int id;
+    private String sessione;
 
-    public int getId() {
-        return id;
+    public String getSessione() {
+        return sessione;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSessione(String sessione) {
+        this.sessione = sessione;
+    }
+
+    public RichiediMessaggiDto(String sessione) {
+        this.sessione = sessione;
     }
 
     public RichiediMessaggiDto() {
     }
 
-    public RichiediMessaggiDto(int id) {
-        this.id = id;
-    }
-
     @Override
     public String toString() {
-        return "RichiediMessaggiDto{" + "id=" + id + '}';
+        return "RichiediMessaggiDto{" + "sessione=" + sessione + '}';
     }
-
-   
-    
 }

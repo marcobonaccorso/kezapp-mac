@@ -12,45 +12,47 @@ package it.sirfin.kezappmac.dto;
 public class InviaMessaggioDto {
 
     private String messaggio;
-    private int id;
     private int idDestinatario;
+    private String sessione;
 
-    public InviaMessaggioDto() {
+    public InviaMessaggioDto(String messaggio, int idDestinatario, String sessione) {
+        this.messaggio = messaggio;
+        this.idDestinatario = idDestinatario;
+        this.sessione = sessione;
     }
 
-    public InviaMessaggioDto(String messaggio, int id, int idDestinatario) {
-        this.messaggio = messaggio;
-        this.id = id;
-        this.idDestinatario = idDestinatario;
+    public InviaMessaggioDto() {
     }
 
     public String getMessaggio() {
         return messaggio;
     }
 
-    public void setMessaggio(String messaggio) {
-        this.messaggio = messaggio;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getIdDestinatario() {
         return idDestinatario;
+    }
+
+    public String getSessione() {
+        return sessione;
+    }
+
+    public void setMessaggio(String messaggio) {
+        this.messaggio = messaggio;
     }
 
     public void setIdDestinatario(int idDestinatario) {
         this.idDestinatario = idDestinatario;
     }
 
+    public void setSessione(String sessione) {
+        this.sessione = sessione;
+    }
+
     @Override
     public String toString() {
-        return "InviaMessaggioDto{" + "messaggio=" + messaggio + ", id=" + id + ", idDestinatario=" + idDestinatario + '}';
+        return "InviaMessaggioDto{" + "messaggio=" + messaggio + ", idDestinatario=" + idDestinatario + ", sessione=" + sessione + '}';
     }
+    
+    
 
 }

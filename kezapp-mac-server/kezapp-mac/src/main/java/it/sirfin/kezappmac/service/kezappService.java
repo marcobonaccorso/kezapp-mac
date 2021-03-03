@@ -23,5 +23,9 @@ public interface KezappService {
     RegistrazioneDto aggiorna(RichiediMessaggiDto reqDto);
 
     RegistrazioneDto invia(InviaMessaggioDto reqDto);
+    
+    RegistrazioneDto recuperaTutti();
+            
+    RegistrazioneDto recuperaUno(InviaMessaggioDto reqDto);
 
 }
