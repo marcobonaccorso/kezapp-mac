@@ -78,7 +78,7 @@ public class KezappServiceImpl implements KezappService {
 
     @Override
     public List<Messaggio> recuperaTuttiMessaggi() {
-        return chatRepository.findAll();
+        return messaggioRepository.findAll();
 
     }
 
