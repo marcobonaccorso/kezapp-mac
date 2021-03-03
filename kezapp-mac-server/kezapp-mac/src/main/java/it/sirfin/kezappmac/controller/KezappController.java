@@ -5,7 +5,9 @@
  */
 package it.sirfin.kezappmac.controller;
 
+import it.sirfin.kezappmac.dto.InviaMessaggioDto;
 import it.sirfin.kezappmac.dto.RegistrazioneDto;
+import it.sirfin.kezappmac.dto.RichiediMessaggiDto;
 import it.sirfin.kezappmac.dto.RichiediRegistrazioneDto;
 import it.sirfin.kezappmac.service.KezappService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +31,18 @@ public class KezappController {
         return Registrazione(reqDto);
     }
 
+    @RequestMapping("/invia-uno")
+    public RegistrazioneDto invia(InviaMessaggioDto reqDto) {
+        return invia(reqDto);
+    }
+
+     @RequestMapping("/invia-tutti")
+    public RegistrazioneDto inviaTutti(InviaMessaggioDto reqDto) {
+        return inviaTutti(reqDto);
+    }
+    
+     @RequestMapping("/aggiorna")
+    public RegistrazioneDto aggiorna(RichiediMessaggiDto reqDto) {
+        return aggiorna(reqDto);
+    }
 }
