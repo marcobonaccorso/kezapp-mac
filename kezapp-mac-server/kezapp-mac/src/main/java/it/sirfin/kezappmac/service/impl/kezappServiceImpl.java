@@ -35,9 +35,9 @@ public class KezappServiceImpl implements KezappService {
     public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqDto) {
         Chat c1 = new Chat(1l, "giorgio", "sessioneUno");
         RegistrazioneDto.save();
-          String s2 =  id.toString ();
-
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String s2 = id.toString();
+        c1.save();
+        return registrazione(reqDto);
     }
 
     @Override
