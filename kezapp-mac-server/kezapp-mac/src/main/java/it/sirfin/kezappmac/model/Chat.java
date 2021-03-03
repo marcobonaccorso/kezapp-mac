@@ -31,10 +31,8 @@ public class Chat implements Serializable {
     public Chat() {
     }
 
-    public Chat(Long id, String nickname, String sessione) {
-        this.id = id;
+    public Chat(String nickname) {
         this.nickname = nickname;
-        this.sessione = sessione;
     }
 
     public Long getId() {
@@ -65,7 +63,9 @@ public class Chat implements Serializable {
     public String toString() {
         return "Chat{" + "id=" + id + ", nickname=" + nickname + ", sessione=" + sessione + '}';
     }
-    
-    
+
+    public void save() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

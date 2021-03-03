@@ -25,18 +25,19 @@ public class KezappServiceImpl implements KezappService {
 
     @Autowired
     ChatRepository kezappRepository;
-    //creare una chat con i dati ricevuti dal controller
-    //salvarla su db e recuperarne il valore con l'id aggiornato
-    //convertire l id in stringa e metterlo nella sessione
-    //aggiornare sul db la chat
-    //ritornare il dto richiesto dal controller
 
     @Override
     public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqDto) {
-        Chat c1 = new Chat(1l, "giorgio", "sessioneUno");
-        RegistrazioneDto.save();
+        //creare una chat con i dati ricevuti dal controller
+        Chat c1 = new Chat(reqDto.getNickname());
+        //salvarla su db e recuperarne il valore con l'id aggiornato
+        c1 = kezappRepository.save(c1);
+
+        //convertire l id in stringa e metterlo nella sessione
         String s2 = id.toString();
+        //aggiornare sul db la chat
         c1.save();
+        //ritornare il dto richiesto dal controller
         return registrazione(reqDto);
     }
 
