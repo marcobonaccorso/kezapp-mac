@@ -5,6 +5,10 @@
  */
 package it.sirfin.kezappmac.service.impl;
 
+import it.sirfin.kezappmac.dto.InviaMessaggioDto;
+import it.sirfin.kezappmac.dto.RegistrazioneDto;
+import it.sirfin.kezappmac.dto.RichiediMessaggiDto;
+import it.sirfin.kezappmac.dto.RichiediRegistrazioneDto;
 import it.sirfin.kezappmac.service.KezappService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,20 +25,29 @@ public class KezappServiceImpl implements KezappService {
     ChatRepository kezappRepository;
 
     @Override
-    public void aggiorna() {
+    public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqDto) {
+        //creare una chat con i dati ricevuti dal controller
+//salvarla su db e recuperarne il valore con l'id aggiornato
+//convertire l id in stringa e metterlo nella sessione
+//aggiornare sul db la chat
+//ritornare il dto richiesto dal controller
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void invia() {
+    public RegistrazioneDto inviaTutti(InviaMessaggioDto reqDto) {
+
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void Registrazione() {
+    public RegistrazioneDto aggiorna(RichiediMessaggiDto reqDto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void inviaTutti() {
+    public RegistrazioneDto invia(InviaMessaggioDto reqDto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
 }

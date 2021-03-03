@@ -27,8 +27,8 @@ public class KezappController {
     KezappService kezappService;
 
     @RequestMapping("/registrazione")
-    public RegistrazioneDto Registrazione(RichiediRegistrazioneDto reqDto) {
-        return Registrazione(reqDto);
+    public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqDto) {
+        return registrazione(reqDto);
     }
 
     @RequestMapping("/invia-uno")
@@ -36,12 +36,12 @@ public class KezappController {
         return invia(reqDto);
     }
 
-     @RequestMapping("/invia-tutti")
+    @RequestMapping("/invia-tutti")
     public RegistrazioneDto inviaTutti(InviaMessaggioDto reqDto) {
         return inviaTutti(reqDto);
     }
-    
-     @RequestMapping("/aggiorna")
+
+    @RequestMapping("/aggiorna")
     public RegistrazioneDto aggiorna(RichiediMessaggiDto reqDto) {
         return aggiorna(reqDto);
     }

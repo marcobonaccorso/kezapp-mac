@@ -5,18 +5,23 @@
  */
 package it.sirfin.kezappmac.service;
 
+import it.sirfin.kezappmac.dto.InviaMessaggioDto;
+import it.sirfin.kezappmac.dto.RegistrazioneDto;
+import it.sirfin.kezappmac.dto.RichiediMessaggiDto;
+import it.sirfin.kezappmac.dto.RichiediRegistrazioneDto;
+
 /**
  *
  * @author aleur
  */
 public interface KezappService {
 
-    void Registrazione();
+    RegistrazioneDto registrazione(RichiediRegistrazioneDto reqDto);
 
-    void inviaTutti();
+    RegistrazioneDto inviaTutti(InviaMessaggioDto reqDto);
 
-    void aggiorna();
+    RegistrazioneDto aggiorna(RichiediMessaggiDto reqDto);
 
-    void invia();
+    RegistrazioneDto invia(InviaMessaggioDto reqDto);
 
 }

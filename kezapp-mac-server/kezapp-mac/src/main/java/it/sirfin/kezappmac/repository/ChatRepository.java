@@ -13,5 +13,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author aleur
  */
 public interface ChatRepository extends JpaRepository<Chat,Long>{
+
+    public static void save();
     
 }
