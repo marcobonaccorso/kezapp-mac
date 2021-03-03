@@ -5,9 +5,12 @@
  */
 package it.sirfin.kezappmac.controller;
 
+import it.sirfin.kezappmac.dto.RegistrazioneDto;
+import it.sirfin.kezappmac.dto.RichiediRegistrazioneDto;
 import it.sirfin.kezappmac.service.KezappService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,8 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("*")
 @RestController
 public class KezappController {
+
     @Autowired
     KezappService kezappService;
-    
-    
+
+    @RequestMapping("/registrazione")
+    public RegistrazioneDto Registrazione(RichiediRegistrazioneDto reqDto) {
+        return Registrazione(reqDto);
+    }
+
 }
