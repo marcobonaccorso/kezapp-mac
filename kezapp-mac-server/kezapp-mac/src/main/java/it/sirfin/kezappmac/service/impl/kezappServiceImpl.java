@@ -14,7 +14,7 @@ import it.sirfin.kezappmac.service.KezappService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import it.sirfin.kezappmac.repository.ChatRepository;
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+import java.util.List;
 
 /**
  *
@@ -40,6 +40,8 @@ public class KezappServiceImpl implements KezappService {
         //ritornare il dto richiesto dal controller
         RegistrazioneDto reg = new RegistrazioneDto();
         // impostare nel dto la lista contatti,messaggi e sessione
+        RegistrazioneDto regDto = new RegistrazioneDto();
+        regDto.setListaContatti( listaContatti);
         
         // ritornare questo dto cosi compilato
         return reg;
@@ -57,6 +59,16 @@ public class KezappServiceImpl implements KezappService {
 
     @Override
     public RegistrazioneDto invia(InviaMessaggioDto reqDto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public RegistrazioneDto recuperaTutti() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public RegistrazioneDto recuperaUno(InviaMessaggioDto reqDto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
