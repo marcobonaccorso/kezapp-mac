@@ -9,6 +9,9 @@ import it.sirfin.kezappmac.dto.InviaMessaggioDto;
 import it.sirfin.kezappmac.dto.RegistrazioneDto;
 import it.sirfin.kezappmac.dto.RichiediMessaggiDto;
 import it.sirfin.kezappmac.dto.RichiediRegistrazioneDto;
+import it.sirfin.kezappmac.model.Chat;
+import it.sirfin.kezappmac.model.Messaggio;
+import java.util.List;
 
 /**
  *
@@ -23,9 +26,11 @@ public interface KezappService {
     RegistrazioneDto aggiorna(RichiediMessaggiDto reqDto);
 
     RegistrazioneDto invia(InviaMessaggioDto reqDto);
-    
-    RegistrazioneDto recuperaTutti();
-            
+
+    List<Chat> recuperaTutteChat();
+
+    List<Messaggio> recuperaTuttiMessaggi();
+
     RegistrazioneDto recuperaUno(InviaMessaggioDto reqDto);
 
 }
