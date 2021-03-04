@@ -33,7 +33,7 @@ public class KezappController {
     public RegistrazioneDto registrazione(@RequestBody RichiediRegistrazioneDto reqDto) {
         System.out.println(reqDto); //visualizza i dati che arrivano dal client
         RegistrazioneDto r = kezappService.registrazione(reqDto);
-        System.out.println(r); //
+        System.out.println(r); 
         return r;
     }
 

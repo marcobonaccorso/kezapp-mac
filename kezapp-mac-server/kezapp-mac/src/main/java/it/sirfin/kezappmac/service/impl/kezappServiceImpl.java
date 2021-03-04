@@ -48,7 +48,7 @@ public class KezappServiceImpl implements KezappService {
         regDto.setContatti(recuperaTutteChat());
         regDto.setMessaggi(recuperaTuttiMessaggi());
         // ritornare questo dto cosi compilato
-        return regDto ;
+        return regDto;
     }
 
     @Override
@@ -56,10 +56,15 @@ public class KezappServiceImpl implements KezappService {
         //con la sessione del dto cerco la chat corrispondente
         Chat k = chatRepository.findBySessione(reqDto.getSessione());
         //se non la trovo, ritorno un dto vuoto
+        if (k.getNickname() == null || k.getNickname().isEmpty()) {
+            return new RegistrazioneDto();
+        }
         //creo un messaggio che contiene il testo, il destinatario a null e l'alias mittente preso dalla chat
+        Messaggio m = new Messaggio(reqDto.getMessaggio(), null, k.getNickname());
         //salvo il messaggio sul db
+        messaggioRepository.save(m);
         //calcolo il nuovo registrazionedto da ritornare e lo ritorno
-        return null;
+        return new RegistrazioneDto(recuperaTutteChat(),recuperaTuttiMessaggi(),reqDto.getSessione());
     }
 
     @Override
