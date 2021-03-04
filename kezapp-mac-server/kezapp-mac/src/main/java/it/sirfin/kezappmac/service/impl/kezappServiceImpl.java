@@ -54,11 +54,11 @@ public class KezappServiceImpl implements KezappService {
     @Override
     public RegistrazioneDto inviaTutti(InviaMessaggioDto reqDto) {
         //con la sessione del dto cerco la chat corrispondente
+        Chat k = chatRepository.findBySessione(reqDto.getSessione());
         //se non la trovo, ritorno un dto vuoto
         //creo un messaggio che contiene il testo, il destinatario a null e l'alias mittente preso dalla chat
         //salvo il messaggio sul db
         //calcolo il nuovo registrazionedto da ritornare e lo ritorno
-        Messaggio m1 = new Messaggio(reqDto.getId());
         return null;
     }
 
