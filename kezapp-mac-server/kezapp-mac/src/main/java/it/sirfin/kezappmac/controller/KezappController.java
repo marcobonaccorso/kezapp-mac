@@ -12,7 +12,9 @@ import it.sirfin.kezappmac.dto.RichiediRegistrazioneDto;
 import it.sirfin.kezappmac.service.KezappService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -27,8 +29,12 @@ public class KezappController {
     KezappService kezappService;
 
     @RequestMapping("/registrazione")
-    public RegistrazioneDto registrazione(RichiediRegistrazioneDto reqDto) {
-        return registrazione(reqDto);
+    @ResponseBody
+    public RegistrazioneDto registrazione(@RequestBody RichiediRegistrazioneDto reqDto) {
+        System.out.println(reqDto); //visualizza i dati che arrivano dal client
+        RegistrazioneDto r = kezappService.registrazione(reqDto);
+        System.out.println(r); //
+        return r;
     }
 
     @RequestMapping("/invia-uno")

@@ -42,13 +42,13 @@ public class KezappServiceImpl implements KezappService {
         //aggiornare sul db la chat
         c1 = chatRepository.save(c1);
         //ritornare il dto richiesto dal controller
-        RegistrazioneDto reg = new RegistrazioneDto();
+        //RegistrazioneDto reg = new RegistrazioneDto();
         // impostare nel dto la lista contatti,messaggi e sessione
         RegistrazioneDto regDto = new RegistrazioneDto();
         regDto.setListaContatti(recuperaTutteChat());
         regDto.setListaMessaggi(recuperaTuttiMessaggi());
         // ritornare questo dto cosi compilato
-        return reg;
+        return regDto ;
     }
 
     @Override

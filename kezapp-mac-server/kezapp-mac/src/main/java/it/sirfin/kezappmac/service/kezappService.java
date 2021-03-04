@@ -13,10 +13,6 @@ import it.sirfin.kezappmac.model.Chat;
 import it.sirfin.kezappmac.model.Messaggio;
 import java.util.List;
 
-/**
- *
- * @author aleur
- */
 public interface KezappService {
 
     RegistrazioneDto registrazione(RichiediRegistrazioneDto reqDto);
