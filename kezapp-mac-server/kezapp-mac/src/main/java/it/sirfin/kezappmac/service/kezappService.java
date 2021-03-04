@@ -25,7 +25,7 @@ public interface KezappService {
 
     List<Chat> recuperaTutteChat();
 
-    List<Messaggio> recuperaTuttiMessaggi();
+    List<Messaggio> recuperaTuttiMessaggi(String s);
 
     RegistrazioneDto recuperaUno(InviaMessaggioDto reqDto);
 

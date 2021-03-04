@@ -44,11 +44,7 @@ public class KezappServiceImpl implements KezappService {
         //ritornare il dto richiesto dal controller
         //RegistrazioneDto reg = new RegistrazioneDto();
         // impostare nel dto la lista contatti,messaggi e sessione
-        RegistrazioneDto regDto = new RegistrazioneDto();
-        regDto.setContatti(recuperaTutteChat());
-        regDto.setMessaggi(recuperaTuttiMessaggi());
-        // ritornare questo dto cosi compilato
-        return regDto;
+       return new RegistrazioneDto(recuperaTutteChat(), recuperaTuttiMessaggi(c1.getNickname()), c1.getSessione());
     }
 
     @Override
@@ -64,7 +60,7 @@ public class KezappServiceImpl implements KezappService {
         //salvo il messaggio sul db
         messaggioRepository.save(m);
         //calcolo il nuovo registrazionedto da ritornare e lo ritorno
-        return new RegistrazioneDto(recuperaTutteChat(),recuperaTuttiMessaggi(),reqDto.getSessione());
+        return new RegistrazioneDto(recuperaTutteChat(), recuperaTuttiMessaggi(k.getNickname()), reqDto.getSessione());
     }
 
     @Override
@@ -88,9 +84,11 @@ public class KezappServiceImpl implements KezappService {
     }
 
     @Override
-    public List<Messaggio> recuperaTuttiMessaggi() {
-        return messaggioRepository.findAll();
-
+    public List<Messaggio> recuperaTuttiMessaggi(String s) {
+        List<Messaggio> pubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblici = messaggioRepository.findbyAliasDestinatarioIsNull();
+        List<Messaggio> privati = messaggioRepository.findbyAliasDestinatario(s);
+        privati.addAll(pubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblici);
+        return privati;
     }
 
 }
