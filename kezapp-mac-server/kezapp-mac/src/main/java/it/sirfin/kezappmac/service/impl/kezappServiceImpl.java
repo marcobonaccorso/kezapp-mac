@@ -45,8 +45,8 @@ public class KezappServiceImpl implements KezappService {
         //RegistrazioneDto reg = new RegistrazioneDto();
         // impostare nel dto la lista contatti,messaggi e sessione
         RegistrazioneDto regDto = new RegistrazioneDto();
-        regDto.setListaContatti(recuperaTutteChat());
-        regDto.setListaMessaggi(recuperaTuttiMessaggi());
+        regDto.setContatti(recuperaTutteChat());
+        regDto.setMessaggi(recuperaTuttiMessaggi());
         // ritornare questo dto cosi compilato
         return regDto ;
     }

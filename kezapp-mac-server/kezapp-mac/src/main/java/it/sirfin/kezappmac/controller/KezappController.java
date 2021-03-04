@@ -39,16 +39,16 @@ public class KezappController {
 
     @RequestMapping("/invia-uno")
     public RegistrazioneDto invia(InviaMessaggioDto reqDto) {
-        return invia(reqDto);
+        throw new UnsupportedOperationException();
     }
 
     @RequestMapping("/invia-tutti")
     public RegistrazioneDto inviaTutti(InviaMessaggioDto reqDto) {
-        return inviaTutti(reqDto);
+        throw new UnsupportedOperationException();
     }
 
     @RequestMapping("/aggiorna")
     public RegistrazioneDto aggiorna(RichiediMessaggiDto reqDto) {
-        return aggiorna(reqDto);
+        throw new UnsupportedOperationException();
     }
 }

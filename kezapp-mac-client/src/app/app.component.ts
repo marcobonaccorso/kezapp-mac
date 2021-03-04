@@ -25,7 +25,10 @@ export class AppComponent {
     let req = new RichiediRegistrazioneDto();
     req.nickname = this.contatto.nickname;
     let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/registrazione", req);
-    oss.subscribe(r => this.contatti = r.contatti);
+    oss.subscribe(r => {
+      console.log(r);
+      this.contatti = r.contatti;
+    });
     this.contatto = new Chat();
   }
 

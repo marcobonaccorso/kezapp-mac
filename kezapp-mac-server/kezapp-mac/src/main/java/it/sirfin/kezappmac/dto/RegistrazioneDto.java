@@ -14,27 +14,33 @@ import java.util.List;
  * @author 39392
  */
 public class RegistrazioneDto {
-    private List<Chat> listaContatti;
-    private List<Messaggio> listaMessaggi;
+    private List<Chat> contatti;
+    private List<Messaggio> messaggi;
     private String sessione;
 
     public RegistrazioneDto() {
     }
 
-    public List<Chat> getListaContatti() {
-        return listaContatti;
+    public RegistrazioneDto(List<Chat> contatti, List<Messaggio> messaggi, String sessione) {
+        this.contatti = contatti;
+        this.messaggi = messaggi;
+        this.sessione = sessione;
     }
 
-    public void setListaContatti(List<Chat> listaContatti) {
-        this.listaContatti = listaContatti;
+    public List<Chat> getContatti() {
+        return contatti;
     }
 
-    public List<Messaggio> getListaMessaggi() {
-        return listaMessaggi;
+    public void setContatti(List<Chat> contatti) {
+        this.contatti = contatti;
     }
 
-    public void setListaMessaggi(List<Messaggio> listaMessaggi) {
-        this.listaMessaggi = listaMessaggi;
+    public List<Messaggio> getMessaggi() {
+        return messaggi;
+    }
+
+    public void setMessaggi(List<Messaggio> messaggi) {
+        this.messaggi = messaggi;
     }
 
     public String getSessione() {
@@ -47,9 +53,10 @@ public class RegistrazioneDto {
 
     @Override
     public String toString() {
-        return "RegistrazioneDto{" + "listaContatti=" + listaContatti + ", listaMessaggi=" + listaMessaggi + ", sessione=" + sessione + '}';
+        return "RegistrazioneDto{" + "contatti=" + contatti + ", messaggi=" + messaggi + ", sessione=" + sessione + '}';
     }
 
+   
     
     
 }
