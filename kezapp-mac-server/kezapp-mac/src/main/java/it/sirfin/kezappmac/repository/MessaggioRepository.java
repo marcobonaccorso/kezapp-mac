@@ -16,8 +16,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface MessaggioRepository extends JpaRepository<Messaggio, Long> {
 
     //query per trovare i messaggi inviati a tutti
-    List<Messaggio> findbyAliasDestinatarioIsNull();
+    List<Messaggio> findByAliasDestinatarioIsNull();
 
-    List<Messaggio> findbyAliasDestinatario(String s);
+    List<Messaggio> findByAliasDestinatario(String s);
 
 }

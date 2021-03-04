@@ -14,6 +14,7 @@ import { RichiediRegistrazioneDto } from './richiedi-registrazione-dto';
 export class AppComponent {
   contatto = new Chat();
   contatti: Chat[] = [];
+  sessione = "";
 
   messaggio = new Messaggio();
   messaggi: Messaggio[] = [];
@@ -28,14 +29,20 @@ export class AppComponent {
     oss.subscribe(r => {
       console.log(r);
       this.contatti = r.contatti;
+      this.sessione = r.sessione;
     });
     this.contatto = new Chat();
   }
 
   inviaATutti() {
     let req = new InviaMessaggioDto();
+    req.sessione = this.sessione;
+    req.messaggio = this.messaggioDaInviare;
     let oss = this.http.post<RegistrazioneDto>("http://localhost:8080/invia-tutti", req);
-    oss.subscribe(r => this.messaggi = r.messaggi);
+    oss.subscribe(r => { 
+      this.messaggi = r.messaggi;
+      this.contatti = r.contatti;
+    });
   }
 
   inviaAUno(c: Messaggio) {

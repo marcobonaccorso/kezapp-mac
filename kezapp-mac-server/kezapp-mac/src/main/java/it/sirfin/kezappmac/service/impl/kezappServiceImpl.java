@@ -50,6 +50,7 @@ public class KezappServiceImpl implements KezappService {
     @Override
     public RegistrazioneDto inviaTutti(InviaMessaggioDto reqDto) {
         //con la sessione del dto cerco la chat corrispondente
+        System.out.println(reqDto);
         Chat k = chatRepository.findBySessione(reqDto.getSessione());
         //se non la trovo, ritorno un dto vuoto
         if (k.getNickname() == null || k.getNickname().isEmpty()) {
@@ -85,9 +86,9 @@ public class KezappServiceImpl implements KezappService {
 
     @Override
     public List<Messaggio> recuperaTuttiMessaggi(String s) {
-        List<Messaggio> pubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblici = messaggioRepository.findbyAliasDestinatarioIsNull();
-        List<Messaggio> privati = messaggioRepository.findbyAliasDestinatario(s);
-        privati.addAll(pubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblici);
+        List<Messaggio> pubblici = messaggioRepository.findByAliasDestinatarioIsNull();
+        List<Messaggio> privati = messaggioRepository.findByAliasDestinatario(s);
+        privati.addAll(pubblici);
         return privati;
     }
 

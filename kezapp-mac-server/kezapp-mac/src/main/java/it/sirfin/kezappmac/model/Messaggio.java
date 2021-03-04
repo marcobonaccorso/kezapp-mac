@@ -34,7 +34,6 @@ public class Messaggio implements Serializable {
     }
 
     public Messaggio(String testo, String aliasDestinatario, String aliasMittente) {
-
         this.testo = testo;
         this.aliasDestinatario = aliasDestinatario;
         this.aliasMittente = aliasMittente;

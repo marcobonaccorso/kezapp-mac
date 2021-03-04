@@ -24,29 +24,29 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("*")
 @RestController
 public class KezappController {
-
+    
     @Autowired
     KezappService kezappService;
-
+    
     @RequestMapping("/registrazione")
     @ResponseBody
     public RegistrazioneDto registrazione(@RequestBody RichiediRegistrazioneDto reqDto) {
         System.out.println(reqDto); //visualizza i dati che arrivano dal client
         RegistrazioneDto r = kezappService.registrazione(reqDto);
-        System.out.println(r); 
+        System.out.println(r);        
         return r;
     }
-
+    
     @RequestMapping("/invia-uno")
     public RegistrazioneDto invia(InviaMessaggioDto reqDto) {
-        throw new UnsupportedOperationException();
+        return kezappService.invia(reqDto);
     }
-
+    
     @RequestMapping("/invia-tutti")
     public RegistrazioneDto inviaTutti(InviaMessaggioDto reqDto) {
-        throw new UnsupportedOperationException();
+        return kezappService.inviaTutti(reqDto);
     }
-
+    
     @RequestMapping("/aggiorna")
     public RegistrazioneDto aggiorna(RichiediMessaggiDto reqDto) {
         throw new UnsupportedOperationException();
